@@ -12,13 +12,13 @@ provider "docker" {
 }
 
 resource "docker_image" "ubuntu" {
-  name = "ubuntu:latest"
+  name = "mohamedakramkssiri/ci-cd-springboot-app"
 }
 
 # Creating a Docker Container using the latest ubuntu image.
 resource "docker_container" "webserver" {
   image             = docker_image.ubuntu.name
-  name              = "terraform-docker-test"
+  name              = "terraform"
   must_run          = true
   publish_all_ports = true
   command = [
