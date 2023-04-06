@@ -70,6 +70,8 @@ jobs:
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
         run: terraform apply -auto-approve -input=false
 
+      - name: get all docker containers
+        run: docker container ls -a
 
 
 
